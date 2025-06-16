@@ -529,4 +529,53 @@ public class Metodos {
         }
         return false;
     }
+    public static int fib(int n){
+        int valor1 = 0, valor2 = 1, valor = 0;
+        if(n == 0){
+            return 0;
+        }else if(n == 1){
+            return 1;
+        }
+
+        for(int i = 1; i < n; i++){
+            valor = valor1 + valor2;
+            valor1 = valor2;
+            valor2 = valor;
+        }
+        return valor;
+    }
+    public static List<Integer> selfDividingNumbers(int left, int right){
+        List<Integer> lista = new ArrayList<>();
+
+        for(int i = left; i <= right; i++){
+            boolean permissao = false;
+            int numero = i,count = 0;
+            int tamanho = String.valueOf(i).length();
+            int []valores = new int[tamanho];
+            int j = 0;
+
+            while(numero > 0){ // divide o  numero
+                valores[j] = numero % 10;
+                j++;
+                numero /= 10;
+            }
+
+            for (int k = 0; k < tamanho; k++) { // contabliza a se o numero é divisivel por todos os seus algarismos
+                if(valores[k] != 0) {
+                    if (i % valores[k] == 0) {
+                        count++;
+                    }
+                }
+            }
+            if(count == tamanho){ // verificar se, a contablização é igual ao nª de algasrismos e, caso for ele pode ser introduzido na lista
+                permissao = true;
+            }
+            if(permissao){
+                lista.add(i);
+            }
+        }
+
+        return lista;
+    }
+
 }
