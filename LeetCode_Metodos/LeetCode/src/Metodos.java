@@ -338,15 +338,24 @@ public class Metodos {
         }
     }
     public static int sqrt(int x) {
-        for(int i = 1; i <= x; i++){
-            if(pow(i,2) == x){
-                return i;
-            } else if (pow(i,2) >= x) {
-                return i-1;
+        if (x < 2) return x;
+
+        int valorEsq = 1, valorDrt = x, resultado = 0;
+
+        while (valorEsq <= valorDrt) {
+            int mid = valorEsq + (valorDrt - valorEsq) / 2; //calcula o meio do intervalo
+
+            if (mid <= x / mid) { // Se mid * mid <= x, mid ainda pode ser a raiz ou está abaixo dela
+                resultado = mid;
+                valorEsq = mid + 1;
+            } else { //Caso mid * mid > x, significa que foi longe demais
+                valorDrt = mid - 1;
             }
         }
-        return 0;
+
+        return resultado;
     }
+
     public static boolean threeDivisors(int n) {
         int j = 0;
         for (int i = 1; i <= n; i++) {
@@ -374,6 +383,148 @@ public class Metodos {
             n = n / 5;
         }
         if(n == 1) {
+            return true;
+        }
+        return false;
+    }
+    public static boolean ninGame(int n){
+        if(n % 4 == 0){
+            return false;
+        }
+        return true;
+    }
+    public static boolean isPowerOfThree(int n){
+        for(int i = 0; i <= n; i++){
+            if(pow(3,i) == n){
+                return true;
+            }
+            if(pow(3,i) > n){
+                break;
+            }
+        }
+        return false;
+    }
+    public static int sum(int num1, int num2) {
+        return num1 + num2;
+    }
+    public static boolean isPowerOfFour(int n){
+        return n > 0 && (n & (n - 1)) == 0 && (n & 0XAAAAAAAA) == 0; // verifica uma operação AND para ver se é multiplo de 2 e
+        //depois verifica se tem um valor 1 em binario num indice par para poder ser um valor cujo 4^i corresponda
+    }
+    public static boolean isPerfectSquare(int num){
+        int valor = sqrt(num);
+        if(valor*valor == num){
+            return true;
+        }
+        return false;
+    }
+    public static List<String> fizzBuzz(int n) {
+        List<String> lista = new ArrayList<>();
+
+        for (int i = 1; i <= n; i++) {
+            if(i % 3 == 0 && i % 5 == 0){
+                lista.add("FizzBuzz");
+            }else if(i % 3 == 0){
+                lista.add("Fizz");
+            }else if(i % 5 == 0){
+                lista.add("Buzz");
+            }
+            else{
+                lista.add(String.valueOf(i));
+            }
+        }
+
+        return lista;
+    }
+    public static String addStrings(String num1, String num2) {
+        StringBuilder StringFinal = new StringBuilder();
+        int tamanho = num2.length(), soma = 0, transporte = 0;
+
+        if(num1.length() > num2.length()){
+            tamanho = num1.length();
+        }
+        int i = num1.length() - 1, j = num2.length() - 1;
+        while(tamanho > 0){
+            int valor1 = (i >= 0) ? num1.charAt(i) - '0' : 0; // se i >=0 valor1 = num1.charAt(i) senao é valor1 = 0
+            int valor2 = (j >= 0) ? num2.charAt(j) - '0' : 0; // se j >=0 valor2 = num2.charAt(i) senao é valor2 = 0
+
+            System.out.println(valor1 +" e "+ valor2);
+            soma = valor2 + valor1 + transporte;
+            transporte = soma / 10;
+            StringFinal.append(soma % 10);
+            tamanho--;
+            i--;
+            j--;
+        }
+        if(transporte != 0){
+            StringFinal.append(transporte);
+        }
+        return StringFinal.reverse().toString();
+    }
+    public static int arrangingCoins(int n){
+        int count = 0;
+        for(int i = 1; i <= n; i++){
+            if(n >= i){
+                n -= i;
+                count ++;
+            }else {
+                break;
+            }
+        }
+        return count;
+    }
+    public static int[] constructRectangle(int area){
+        int []valores = new int[2];
+        int altura = 1,base = 1;
+        for(int i = 1; i <= area; i++){
+            if(area % i ==0){
+                base = i;
+                altura = area / i;
+            }
+
+            if(base >= altura){
+                valores[0] = base;
+                valores[1] = altura;
+                break;
+            }
+        }
+        return valores;
+    }
+    public static String convertToBase7(int num){
+        StringBuilder StringFinal = new StringBuilder();
+        boolean negativo = false;
+
+        if(num < 0){
+            negativo = true;
+        }
+
+        if(num < 7 && num > -7){
+            return String.valueOf(num);
+        }
+
+        if(num <= -7){
+            num = num  * (-1);
+        }
+
+        while(num > 0){
+            StringFinal.append(num % 7);
+            num /= 7;
+        }
+
+        if(negativo){
+            StringFinal.append('-');
+        }
+
+        return StringFinal.reverse().toString();
+    }
+    public static boolean checkPerfectNumber(int num){
+        int soma = 0;
+        for(int i = 1; i < num; i++){
+            if(num % i == 0){
+                soma = soma + i;
+            }
+        }
+        if(soma == num){
             return true;
         }
         return false;
