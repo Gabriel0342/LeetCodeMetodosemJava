@@ -1,7 +1,7 @@
 public class Implementação {
     public static void main(String[] args) {
-        int left = 47;
-        int right = 85;
-        System.out.println(Metodos.selfDividingNumbers(left, right));
+        int x = 842;
+        int y = 888;
+        System.out.println(Metodos.countPrimeSetBits(x,y));
     }
 }

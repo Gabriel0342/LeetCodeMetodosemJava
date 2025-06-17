@@ -39,7 +39,6 @@ public class Metodos {
         int[] listaB = new int[maxLength];
         int[] resultado = new int[maxLength + 1];
 
-        // Fill arrays from the end
         for (int i = 0; i < a1.length(); i++) {
             listaA[maxLength - 1 - i] = a1.charAt(a1.length() - 1 - i) - '0';
         }
@@ -577,5 +576,81 @@ public class Metodos {
 
         return lista;
     }
+    public static String toHex(int num){
+        StringBuilder StringFinal = new StringBuilder();
 
+        int tamanho = String.valueOf(num).length();
+        int valor = num,k = 0;
+        boolean valido = true;
+
+        if(num > 15){
+            valido = false;
+        }
+
+        if(num < 10 && num >=0){
+            StringFinal.append(num);
+            return StringFinal.reverse().toString();
+        }
+
+        else if(num < 0){
+            String a = String.format("%08X", num).toLowerCase(); //converte diretamente para um hexa com 32 bits
+            StringFinal.append(a);
+            return StringFinal.toString();
+        }
+
+
+        while(valor > 0){
+            k = valor % 16;
+            valor = valor / 16;
+            if(k > 9){
+                switch (k){
+                    case 10:StringFinal.append('a');break;
+                    case 11:StringFinal.append('b');break;
+                    case 12:StringFinal.append('c');break;
+                    case 13:StringFinal.append('d');break;
+                    case 14:StringFinal.append('e');break;
+                    case 15:StringFinal.append('f');break;
+                }
+                if(k >= 16){
+                    int x = k - 6;
+                    StringFinal.append(x);
+                }
+            }
+            else if(k >= 0 && k <= 9 && !valido){
+                StringFinal.append(k);
+            }
+        }
+        return StringFinal.reverse().toString();
+    }
+    public static int countPrimeSetBits(int left, int right){
+        int []valor = new int[right-left + 1];
+        int count = 0, k = 0;
+
+        for (int i = left; i <= right; i++){
+            int valorBinario = Integer.bitCount(i);
+            valor[k] = valorBinario;
+            k++;
+        }
+        for (int i = 0; i < valor.length; i++) {
+            boolean primo = true;
+            int num = valor[i];
+
+            if (num <= 1) {
+                primo = false;
+            } else {
+                for (int j = 2; j * j <= num; j++) {
+                    if (num % j == 0) {
+                        primo = false;
+                        break;
+                    }
+                }
+            }
+
+            if (primo) {
+                count++;
+            }
+        }
+
+        return count;
+    }
 }
