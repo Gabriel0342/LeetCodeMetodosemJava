@@ -5,8 +5,8 @@ import java.util.Objects;
 public class ArrayMistch {
 
     public static void main(String[] args) {
-        char valor1 = '0';
-        char valor2 = '1';
+        int []valor1 = {1,2,3};
+        int []valor2 = {1,2,3};
 
         String resultado = mismatch (valor1,valor2);
         System.out.println(resultado);
