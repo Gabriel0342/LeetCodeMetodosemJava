@@ -1,7 +1,6 @@
 public class Implementação {
     public static void main(String[] args) {
-        int x = 842;
-        int y = 888;
-        System.out.println(Metodos.countPrimeSetBits(x,y));
+        int[] deck = {1,1,1,2,2,2,3,3};
+        System.out.printf(String.valueOf(Metodos.hasGroupsSizeX(deck)));
     }
 }

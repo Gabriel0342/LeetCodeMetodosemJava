@@ -653,4 +653,12 @@ public class Metodos {
 
         return count;
     }
+    public static boolean hasGroupsSizeX(int[] deck){
+        for(int i = 0; i < deck.length; i++){
+            if(deck[i] != deck[deck.length - i - 1]){
+                return false;
+            }
+        }
+        return true;
+    }
 }

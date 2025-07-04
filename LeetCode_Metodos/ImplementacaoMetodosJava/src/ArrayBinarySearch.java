@@ -1,13 +1,21 @@
 public class ArrayBinarySearch {
     public static void main(String[] args) {
-        int []array = {1,2,3,4,5,6,7,8,9};
-        int valor = 9;
+        int []array = new int [1000000];
+
+        for (int i = 0; i < array.length; i++) {
+            array[i] = i;
+        }
+        int valor = 999999;
         System.out.printf(String.valueOf(arrayBinarySearch(array,valor)));
 
     }
     public static int arrayBinarySearch(int[] array, int valor) {
+        long tempoInicial = System.currentTimeMillis();
         for (int i = 0; i < array.length; i++) {
             if (array[i] == valor) {
+                long tempoFinal = System.currentTimeMillis();
+                long tempoDeExecucao = tempoFinal - tempoInicial;
+                System.out.println("Demorou " + tempoDeExecucao + " milisegundos");
                 return i;
             }
         }
