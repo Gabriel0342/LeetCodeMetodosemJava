@@ -653,12 +653,42 @@ public class Metodos {
 
         return count;
     }
-    public static boolean hasGroupsSizeX(int[] deck){
-        for(int i = 0; i < deck.length; i++){
-            if(deck[i] != deck[deck.length - i - 1]){
-                return false;
-            }
+    public static  int dayOfYear(String date){
+        String[] dataSeparada = date.split("-");
+        int []dias = {31,28,31,30,31,30,31,31,30,31,30,31};
+        int soma = 0;
+
+        int ano = Integer.parseInt(dataSeparada[0]);
+        int mes = Integer.parseInt(dataSeparada[1]);
+        int dia = Integer.parseInt(dataSeparada[2]);
+
+        if(ano % 4 == 0 && (ano % 100 != 0 || ano % 400 == 0)){
+            System.out.println("daudb");
+            dias[1] = 29;
         }
-        return true;
+
+        for(int i = 0; i < mes - 1; i++){
+            System.out.println(soma);
+            soma = soma + dias[i];
+        }
+        soma = soma + dia;
+
+        return soma;
+    }
+    public static int tribonacci(int n) {
+        if(n == 1 || n == 2){
+            return 1;
+        }
+        int soma = 0;
+        int valor1 = 0, valor2 = 1, valor3 = 1;
+
+        for(int i = 1; i < n - 1; i++){
+            soma = valor1 + valor2 + valor3;
+            System.out.println(valor1 +"+"+valor2 +"+"+valor3+" = "+soma);
+            valor1 = valor2;
+            valor2 = valor3;
+            valor3 = soma;
+        }
+        return soma;
     }
 }
