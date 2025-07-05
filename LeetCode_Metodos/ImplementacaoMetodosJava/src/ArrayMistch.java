@@ -11,6 +11,13 @@ public class ArrayMistch {
         String resultado = mismatch (valor1,valor2);
         System.out.println(resultado);
     }
+
+    /**
+     *
+     * @param valores1 vai receber o primeiro array
+     * @param valores2 vai receber o segundo array
+     * @return vai dizer qual o indice onde os dois arrays deixam de ser iguais pela primeira vez caso, sejam iguais vai retonar null
+     */
     public static String mismatch (Object valores1, Object valores2) {
         try {
             long tempoInicial = System.currentTimeMillis();

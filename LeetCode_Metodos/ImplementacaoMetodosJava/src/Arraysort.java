@@ -62,6 +62,12 @@ public class Arraysort {
             System.out.print(ordenados[i]+" ");
         }
     }
+
+    /**
+     *
+     * @param num é um array de caracteres para ser ordenado
+     * @return o array ordenado
+     */
     public static char[] sort(char []num) {
         long tempoInicial = System.currentTimeMillis();
         for (int i = 0; i < num.length; i++) {

@@ -11,6 +11,11 @@ public class ArrayToString {
         }
         ToString(teste);
     }
+
+    /**
+     *
+     * @param array recebe o array para ser escrito no ecrã
+     */
     public static void ToString(Object[] array) {
         for (int i = 0; i < array.length; i++) {
             System.out.printf("%s ", array[i]);

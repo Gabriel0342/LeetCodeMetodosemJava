@@ -14,6 +14,13 @@ public class ArrayEquals {
 
         System.out.println(arrayEquals(array,array2));
     }
+
+    /**
+     *
+     * @param valor1 vai ser o primeiro array a ser recebido
+     * @param valor2 vai ser o segundo array a ser recebido
+     * @return vai dizer se é igual ou não
+     */
     public static boolean arrayEquals(Object valor1, Object valor2) {
         String resultado = ArrayMistch.mismatch(valor1,valor2);
         return resultado == null;
