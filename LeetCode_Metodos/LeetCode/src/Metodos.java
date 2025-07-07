@@ -691,4 +691,21 @@ public class Metodos {
         }
         return soma;
     }
+    public static int smallestRangeI(int[] nums, int k) {
+        int maximo = nums[0], minimo = nums[0];
+
+        for (int i = 0; i < nums.length; i++) {
+            if(nums[i] > maximo)  {
+                maximo = nums[i];
+            } else if (nums[i] < minimo) {
+                minimo = nums[i];
+            }
+        }
+        int resultado = (maximo-k) - (minimo+k);
+        if(resultado < 0){
+            resultado = 0;
+        }
+        return resultado;
+    }
+
 }
