@@ -10,7 +10,7 @@ public class ArraycopyOf {
         }
         long tempoFinal = System.currentTimeMillis();
         long tempoDeExecucao = tempoFinal - tempoInicial;
-        Object [] array2 = ArraycopyOf(array, array.length);
+        Object [] array2 = ArraycopyOf(array, 5001);
         System.out.println(Arrays.toString(array2));
         System.out.println("Demorou " + tempoDeExecucao + " milisegundos");
     }
@@ -22,6 +22,9 @@ public class ArraycopyOf {
      * @return o array copiado
      */
     public static Object[] ArraycopyOf(Object [] array, int tamanho){
+        if(tamanho > array.length){
+            tamanho = array.length;
+        }
         Object [] ArrayCopiado = new Object[tamanho];
         for(int i = 0; i < tamanho; i++){
             ArrayCopiado[i] = array[i];
