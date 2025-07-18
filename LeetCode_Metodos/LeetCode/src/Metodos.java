@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.*;
 
 public class Metodos {
@@ -707,5 +708,17 @@ public class Metodos {
         }
         return resultado;
     }
-
+    public static String dayOfTheWeek(int day, int month, int year) {
+        String diaDaSemana = LocalDate.of(year, month, day).getDayOfWeek().toString().toLowerCase();
+        String novaString = "";
+        for(int i = 0; i < diaDaSemana.length(); i++){
+            if(i == 0){
+                novaString = diaDaSemana.charAt(i) + novaString;
+                novaString = novaString.toUpperCase();
+            }else {
+                novaString = novaString + diaDaSemana.charAt(i);
+            }
+        }
+        return novaString;
+    }
 }
