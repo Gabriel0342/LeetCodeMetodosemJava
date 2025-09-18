@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/LeetCodeMetodosemJava-master/LeetCode_Metodos/ImplementacaoMetodosJava/ImplementacaoMetodosJava.iml" filepath="$PROJECT_DIR$/LeetCodeMetodosemJava-master/LeetCode_Metodos/ImplementacaoMetodosJava/ImplementacaoMetodosJava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LeetCodeMetodosemJava-master/LeetCode_Metodos/LeetCode/LeetCode.iml" filepath="$PROJECT_DIR$/LeetCodeMetodosemJava-master/LeetCode_Metodos/LeetCode/LeetCode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/LeetCodeMetodosemJava.iml" filepath="$PROJECT_DIR$/.idea/LeetCodeMetodosemJava.iml" />
+    </modules>
+  </component>
+</project>

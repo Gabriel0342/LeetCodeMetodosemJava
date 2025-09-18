@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/LeetCode_Metodos/Exercícios.iml" filepath="$PROJECT_DIR$/LeetCode_Metodos/Exercícios.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LeetCode_Metodos/ImplementacaoMetodosJava/ImplementacaoMetodosJava.iml" filepath="$PROJECT_DIR$/LeetCode_Metodos/ImplementacaoMetodosJava/ImplementacaoMetodosJava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/LeetCode.iml" filepath="$PROJECT_DIR$/.idea/LeetCode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LeetCode_Metodos/LeetCode./LeetCode..iml" filepath="$PROJECT_DIR$/LeetCode_Metodos/LeetCode./LeetCode..iml" />
+    </modules>
+  </component>
+</project>
