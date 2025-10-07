@@ -1,3 +1,4 @@
+import java.math.BigInteger;
 import java.time.LocalDate;
 import java.util.*;
 
@@ -736,5 +737,44 @@ public class Metodos {
         }
         return count;
     }
+    public static int maximum69Number (int num) {
+        int []algarismos = new int[String.valueOf(num).length()];
+        int valor = 0;
+        int []valorArmazenados = new int[String.valueOf(num).length()];
 
+
+        for(int i = algarismos.length - 1; i >= 0; i--){
+            algarismos[i] = num%10;
+            num = num/10;
+        }
+
+        for(int i = 0; i < algarismos.length; i++){
+            if(algarismos[i] == 6){
+                algarismos[i] = 9;
+                break;
+            }
+        }
+        for(int i = 0; i < algarismos.length; i++){
+            valor += algarismos[i] * Math.pow(10, algarismos.length - i - 1);
+        }
+
+        return valor;
+    }
+    public static int[] plusOne(int[] digits) {
+        StringBuilder valores = new StringBuilder();
+        for (int i : digits) {
+            valores.append(i);
+        }
+
+        BigInteger valor = new BigInteger(valores.toString());
+        valor = valor.add(BigInteger.ONE);
+
+        String resultado = valor.toString();
+        int[] valoresFinais = new int[resultado.length()];
+
+        for (int i = 0; i < resultado.length(); i++) {
+            valoresFinais[i] = resultado.charAt(i) - '0';
+        }
+        return valoresFinais;
+    }
 }
