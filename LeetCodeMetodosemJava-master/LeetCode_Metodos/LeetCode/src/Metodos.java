@@ -1,5 +1,10 @@
 import java.math.BigInteger;
 import java.time.LocalDate;
+import java.time.MonthDay;
+import java.time.Period;
+import java.time.chrono.ChronoPeriod;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.*;
 
 public class Metodos {
@@ -776,5 +781,35 @@ public class Metodos {
             valoresFinais[i] = resultado.charAt(i) - '0';
         }
         return valoresFinais;
+    }
+    /*public static int countDaysTogether(String arriveAlice, String leaveAlice, String arriveBob, String leaveBob) {
+        int diasIntervalo = 0;
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy");
+        LocalDate chegadaAlice = LocalDate.parse(arriveAlice + "-2000", formatter);
+        LocalDate saidaAlice = LocalDate.parse(leaveAlice + "-2000", formatter);
+        LocalDate chegadaBob = LocalDate.parse(arriveBob + "-2000", formatter);
+        LocalDate saidaBob = LocalDate.parse(leaveBob + "-2000", formatter);
+
+        if(chegadaAlice.isBefore(chegadaBob) && chegadaBob.isBefore(saidaAlice)) {
+            diasIntervalo = (int) ChronoUnit.DAYS.between(chegadaBob,saidaAlice) + 1;
+        }else if(chegadaAlice.isAfter(chegadaBob) &&  chegadaBob.isBefore(saidaAlice)){
+            diasIntervalo = (int) ChronoUnit.DAYS.between(chegadaAlice,saidaBob) + 1;
+        }
+        else{
+            return 0;
+        }
+        return diasIntervalo;
+    }*/
+    public static int superPow(int a, int[] b) {
+        StringBuilder stringBuilder = new StringBuilder();
+        for(int i : b){
+            stringBuilder.append(i);
+        }
+        BigInteger base = BigInteger.valueOf(a);
+        BigInteger valorExpoente = new BigInteger(stringBuilder.toString());
+        BigInteger modulo = BigInteger.valueOf(1337);
+        BigInteger resultado = base.modPow(valorExpoente,modulo);
+
+        return resultado.intValue();
     }
 }
